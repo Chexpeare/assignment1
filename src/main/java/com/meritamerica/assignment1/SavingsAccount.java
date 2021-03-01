@@ -2,7 +2,7 @@ package com.meritamerica.assignment1;
 
 /**
  * CheckingAccount() contains account data, including balance, 
- * interest rate, withdrawal, deposit, future value calculation.
+ * interest rate, withdrawal, deposit, future value calculation. 
  */
 
 import java.text.DecimalFormat;

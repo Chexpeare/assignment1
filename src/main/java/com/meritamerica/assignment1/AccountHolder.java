@@ -10,7 +10,7 @@ package com.meritamerica.assignment1;
 public class AccountHolder {
 	
 	/** 
-	 * Creates a new AccountHolder object with the specified name and ID
+	 * Creates a new AccountHolder object with the specified name and ID 
 	 * @param firstName:	String - customer's First Name 
 	 * @param middleName:	String - customer's Middle Name
 	 * @param lastName:		String - customer's Last Name
