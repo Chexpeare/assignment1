@@ -16,8 +16,8 @@ public class MeritAmericaBankApp {
 //		Output: Current state of checking and savings account for specified customer
 		accountCall.getCheckingAccount().deposit(500.00);
 		accountCall.getSavingsAccount().withdraw(800.00);
-		System.out.println(accountCall.getCheckingAccount().toString());
-		System.out.println(accountCall.getSavingsAccount().toString());
+		System.out.println("Deposit " + "$500.00\n" + accountCall.getCheckingAccount().toString());
+		System.out.println("Withdraw " + "$800.00\n" + accountCall.getSavingsAccount().toString());
 
 		System.out.println("_______________________________________________" + "\n");
 
@@ -28,8 +28,8 @@ public class MeritAmericaBankApp {
 //		Output: Current state of checking and savings account for specified customer
 		accCallTwo.getCheckingAccount().deposit(-500.00);
 		accCallTwo.getSavingsAccount().withdraw(600.00);
-		System.out.println(accCallTwo.getCheckingAccount().toString());
-		System.out.println(accCallTwo.getSavingsAccount().toString());
+		System.out.println("Deposit " + "-$500.00\n" + accCallTwo.getCheckingAccount().toString());
+		System.out.println("Withdraw " + "$600.00\n" + accCallTwo.getSavingsAccount().toString());
 	}
 }
 

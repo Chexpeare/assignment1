@@ -12,6 +12,7 @@ public class SavingsAccount {
 	private	double balance;
 	private double savInt = 0.01;
 	
+	/* CONSTRUCTOR: CheckingAccount */
 	public SavingsAccount(double openingBalance) {
 		this.balance = openingBalance;
 	}
@@ -22,6 +23,20 @@ public class SavingsAccount {
 
 	public double getInterestRate() {
 		return savInt;
+	}
+	
+	/* 
+	 * Checks deposit amount: 
+	 * If the deposit amount is a negative number,
+	 * no calculation is performed and returns false. 
+	 */
+	public boolean deposit(double amount) {
+		
+		if(amount > 0) {
+			this.balance += amount;
+			return true;
+		} 
+		return false;
 	}
 	
 	/* 
@@ -38,20 +53,6 @@ public class SavingsAccount {
 		return false;
 	}
 
-	/* 
-	 * Checks deposit amount: 
-	 * If the deposit amount is a negative number,
-	 * no calculation is performed and returns false. 
-	 */
-	public boolean deposit(double amount) {
-		
-		if(amount > 0) {
-			this.balance += amount;
-			return true;
-		} 
-		return false;
-	}
-	
 	/*
 	 * Calculation: Future Value based on current balance and interest.
 	 */

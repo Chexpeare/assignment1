@@ -1,6 +1,6 @@
 package com.meritamerica.assignment1;
 
-/** The AccountHolder constructor keeps track of the following pieces of data
+/** The AccountHolder CONSTRUCTOR keeps track of the following pieces of data
  * about a customer: First Name, Middle Name, Last Name, Social Security Number, 
  * Checking Account, and Savings Account. All of this information is entirely 
  * private to the class. Clients such as the MeritAmericaBankApp can obtain this 
@@ -9,35 +9,39 @@ package com.meritamerica.assignment1;
 
 public class AccountHolder {
 	
-	/** 
-	 * Creates a new AccountHolder object with the specified name and ID 
-	 * @param firstName:	String - customer's First Name 
-	 * @param middleName:	String - customer's Middle Name
-	 * @param lastName:		String - customer's Last Name
-	 * @param ssn:			String - customer's SSN number
-	 */
+/** 
+ * Creates a new AccountHolder object with the specified name and ID 
+ * @param firstName:	String - customer's First Name 
+ * @param middleName:	String - customer's Middle Name
+ * @param lastName:		String - customer's Last Name
+ * @param ssn:			String - customer's SSN number
+ */
 	
-	/* Private instance variables */
+	/* 
+	 * Private instance variables: 
+	 */
 	private String firstName;		/* Customer's First Name		*/
 	private String middleName;		/* Customer's Middle Name		*/
 	private String lastName;		/* Customer's Last Name			*/
-	private String ssn;				/* customer's SSN number		*/
+	private String ssn;				/* Customer's SSN number		*/
 	private CheckingAccount chk;
 	private SavingsAccount sav;
 	
-	public AccountHolder(String firstName, 
-							String middleName, 
-							String lastName, 
-							String ssn, 
-							double ckBal, 
-							double savBal) { 
-		
-		 this.firstName = firstName;
-		 this.middleName = middleName;
-		 this.lastName = lastName;
-		 this.ssn = ssn;
-		 this.chk = new CheckingAccount(ckBal);
-		 this.sav = new SavingsAccount(savBal);
+	/* 
+	 * AccountHolder CONSTRUCTOR, TASOJ, p. 189
+	 * 	1. The name of the constructor is always the same as that of the class
+	 * 	2. A constructor does not specify a result type 
+	 */
+	public AccountHolder(String firstName, String middleName, String lastName, String ssn, 
+							double checkingAccountOpeningBalance, 
+							double savingsAccountOpeningBalance) { 
+
+		 this.setFirstName(firstName);
+		 this.setMiddleName(middleName);
+		 this.setLastName(lastName);
+		 this.setSSN(ssn);
+		 this.chk = new CheckingAccount(checkingAccountOpeningBalance);
+		 this.sav = new SavingsAccount(savingsAccountOpeningBalance);
 	}
 
 	/** 
@@ -53,7 +57,7 @@ public class AccountHolder {
 	 * @return the First Name of the customer 
 	 */
 	public void setFirstName(String firstName) {
-
+		this.firstName = firstName;
 	}
 	
 	/** 
@@ -69,7 +73,7 @@ public class AccountHolder {
 	 * @return the Middle name of this customer 
 	 */
 	public void setMiddleName(String middleName) {
-	
+		this.middleName = middleName;	
 	}
 	
 	/** 
@@ -85,6 +89,7 @@ public class AccountHolder {
 	 * @return the Last Name of the customer 
 	 */
 	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	/** 
@@ -100,7 +105,7 @@ public class AccountHolder {
 	 * @return the SSN of the customer 
 	 */
 	public void setSSN(String ssn) {
-		
+		this.ssn = ssn;
 	}
 	
 	/** 
@@ -125,11 +130,10 @@ public class AccountHolder {
 	 */
 	public String toString() {
 		String fullName = firstName + " " + middleName + " " + lastName;
-		String concat1 = fullName + "\n" + "SSN: " + ssn + "\n"; 
+		String concat1 = fullName + "\n" + "SSN: " + ssn + "\n\n"; 
 		String concat2 = this.chk.toString() + "\n"; 
 		String concat3 = this.sav.toString();
 		String concatAcct = concat1 + concat2 + concat3;
-		
 		return concatAcct;
 	}
 }

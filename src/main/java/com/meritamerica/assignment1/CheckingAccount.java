@@ -12,6 +12,7 @@ public class CheckingAccount {
 	private	double balance;
 	private double ckInt = 0.0001;
 	
+	/* CONSTRUCTOR: CheckingAccount */
 	public CheckingAccount(double openingBalance) {
 		this.balance = openingBalance;
 	}
@@ -22,6 +23,20 @@ public class CheckingAccount {
 
 	public double getInterestRate() {
 		return ckInt;
+	}
+	
+	/* 
+	 * Checks deposit amount: 
+	 * If the deposit amount is a negative number,
+	 * no calculation is performed and returns false. 
+	 */
+	public boolean deposit(double amount) {
+
+		if(amount > 0) {
+			this.balance += amount;
+			return true;
+		} 
+		return false;
 	}
 	
 	/* 
@@ -38,19 +53,6 @@ public class CheckingAccount {
 		return false;
 	}
 
-	/* 
-	 * Checks deposit amount: 
-	 * If the deposit amount is a negative number,
-	 * no calculation is performed and returns false. 
-	 */
-	public boolean deposit(double amount) {
-
-		if(amount > 0) {
-			this.balance += amount;
-			return true;
-		} 
-		return false;
-	}
 	/*
 	 * Calculation: Future Value based on current balance and interest.
 	 */
